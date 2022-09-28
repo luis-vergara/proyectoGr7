@@ -93,5 +93,12 @@ public class TituloServicio {
         session.close();
         return titulos;
     }
+    public List<Titulo> getListUsername(String nombre) throws Exception{
+        Session session = createSession();
+        List<Titulo> objTitulo = session.createQuery("from  Titulo where Titulo = :n ",Titulo.class).setParameter("n", nombre).list();
+        session.close();
+        return objTitulo;
+
+    }
 
 }

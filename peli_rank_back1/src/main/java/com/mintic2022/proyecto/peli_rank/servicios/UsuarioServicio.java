@@ -72,5 +72,12 @@ public class UsuarioServicio {
         session.close();
         return usuarios;
     }
+    public boolean  verificarCredencial(Usuario usuario){
+        Session session = createSession();
+        List<Usuario> query = session.createQuery("From Usuario Where Nickname =:nickname AND Contrasena =:contrasena",Usuario.class)
+                .setParameter("nickname",usuario.getNickname())
+                ..setParameter("contrasena",usuario.getContrasena()).getResultList();
+        return !query.isEmpty();
+    }
 
 }

@@ -60,5 +60,16 @@ public class TituloVista {
         }
         return titulos;
       }
+    @GetMapping("/nombre")
+    public List<Titulo> getByNombre(@RequestParam String nombre){
+      List<Titulo> titulo = new ArrayList<>();
+      try {
+          titulo = servicio.getListUsername(nombre);
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+      return titulo;
+
+  }
     
 }
