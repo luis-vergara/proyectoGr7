@@ -80,4 +80,15 @@ public class UsuarioServicio {
         return !query.isEmpty();
     }
 
+    public List<Usuario> getListUsername(String nickname) throws Exception{
+
+        Session session = createSession();
+        List<Usuario> objUsuarios = session.createNativeQuery("select * from usuario where Nickname = :n ",Usuario.class)
+        .setParameter("n", nickname)
+        .list();
+        session.close();
+        return objUsuarios;
+
+    }
+
 }

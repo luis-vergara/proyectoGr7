@@ -114,6 +114,17 @@ public class ComentarioServicio {
         return message;
     }
 
+    public List<Comentario> getComentariosByTituloId(int idTitulo) throws Exception{
+        Session session = factory.openSession();
+        session.beginTransaction();
+        List<Comentario> comentarios = session.createQuery("select c from Comentario c where c.titulo.idTitulo like :n", Comentario.class)
+        .setParameter("n", idTitulo)
+        .list();
+        session.close();
+
+        return comentarios;
+    }
+
     public List<Comentario> getList() throws Exception {
         Session session = factory.openSession();
         session.beginTransaction();

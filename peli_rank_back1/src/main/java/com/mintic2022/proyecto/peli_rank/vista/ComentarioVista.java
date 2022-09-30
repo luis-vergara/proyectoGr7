@@ -69,4 +69,24 @@ public class ComentarioVista {
         return comentarios;
       }
 
+    @GetMapping("/{idTitulo}")
+    @CrossOrigin("*")
+    public List<Comentario> ComentarioByIdTitulo(@PathVariable(name = "idTitulo") int idtitulo){
+
+        List<Comentario> comentariosId = new ArrayList<>();
+
+        try {
+            
+            comentariosId = servicio.getComentariosByTituloId(idtitulo);
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return comentariosId;
+    }
+
 }
