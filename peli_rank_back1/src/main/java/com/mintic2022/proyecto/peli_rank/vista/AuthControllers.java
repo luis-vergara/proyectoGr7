@@ -6,6 +6,7 @@ import com.mintic2022.proyecto.peli_rank.servicios.UsuarioServicio;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import com.mintic2022.proyecto.peli_rank.modelo.Usuario;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
@@ -16,6 +17,7 @@ public class AuthControllers {
         this.usuarioServicio= new UsuarioServicio();
     }
     @PostMapping
+    @CrossOrigin("*")
     public  String login(@RequestBody Usuario usuario){
         if(usuarioServicio.verificarCredencial(usuario)){
             return "Ok";

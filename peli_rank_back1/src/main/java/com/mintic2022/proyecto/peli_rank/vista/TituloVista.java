@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.mintic2022.proyecto.peli_rank.modelo.Titulo;
 import com.mintic2022.proyecto.peli_rank.servicios.TituloServicio;
 
@@ -26,11 +26,13 @@ public class TituloVista {
     }
 
     @PostMapping
+    @CrossOrigin("*")
     public String create(@RequestBody Titulo titulo){
         return servicio.create(titulo);
       }
 
     @PutMapping
+    @CrossOrigin("*")
     public String update(@RequestBody Titulo titulo){
 
         String message = "";
@@ -44,6 +46,7 @@ public class TituloVista {
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("*")
     public String delete(@PathVariable(name = "id") int id){
         return servicio.delete(id);
     }
@@ -51,6 +54,7 @@ public class TituloVista {
         
 
     @GetMapping
+    @CrossOrigin("*")
     public List<Titulo> getList(){
         List<Titulo> titulos = new ArrayList<>();
         try {
@@ -61,6 +65,7 @@ public class TituloVista {
         return titulos;
       }
     @GetMapping("/nombre")
+    @CrossOrigin("*")
     public List<Titulo> getByNombre(@RequestParam String nombre){
       List<Titulo> titulo = new ArrayList<>();
       try {

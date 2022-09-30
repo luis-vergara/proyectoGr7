@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.mintic2022.proyecto.peli_rank.modelo.Usuario;
 import com.mintic2022.proyecto.peli_rank.servicios.UsuarioServicio;
 
@@ -26,11 +26,13 @@ public class UsuarioVista {
     }
 
     @PostMapping
+    @CrossOrigin("*")
     public String create(@RequestBody Usuario usuario){
         return servicio.create(usuario);
       }
 
     @PutMapping
+    @CrossOrigin("*")
     public String update(@RequestBody Usuario usuario){
 
         String message = "";
@@ -44,6 +46,7 @@ public class UsuarioVista {
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("*")
     public String delete(@PathVariable(name = "id") int id){
         return servicio.delete(id);
     }
@@ -51,6 +54,7 @@ public class UsuarioVista {
         
 
     @GetMapping
+    @CrossOrigin("*")
     public List<Usuario> getList(){
         List<Usuario> usuarios = new ArrayList<>();
         try {

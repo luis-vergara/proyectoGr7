@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.mintic2022.proyecto.peli_rank.modelo.Comentario;
 import com.mintic2022.proyecto.peli_rank.servicios.ComentarioServicio;
 
@@ -27,6 +27,7 @@ public class ComentarioVista {
     }
 
     @PostMapping("/publicar")
+    @CrossOrigin("*")
     public String create(@RequestParam int usuario, @RequestParam int titulo, @RequestParam String comentario, @RequestParam int valoracion){
         return servicio.create(usuario, titulo, comentario, valoracion);
       }
@@ -37,6 +38,7 @@ public class ComentarioVista {
         }*/
 
     @PutMapping
+    @CrossOrigin("*")
     public String update(@RequestBody Comentario comentario){
 
         String message = "";
@@ -50,11 +52,13 @@ public class ComentarioVista {
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("*")
     public String delete(@PathVariable(name = "id") int id){
         return servicio.delete(id);
     }
 
     @GetMapping
+    @CrossOrigin("*")
     public List<Comentario> getList(){
         List<Comentario> comentarios = new ArrayList<>();
         try {
