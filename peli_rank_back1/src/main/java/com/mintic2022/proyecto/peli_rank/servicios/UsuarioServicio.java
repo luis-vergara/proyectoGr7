@@ -74,9 +74,9 @@ public class UsuarioServicio {
     }
     public boolean  verificarCredencial(Usuario usuario){
         Session session = createSession();
-        List<Usuario> query = session.createQuery("From Usuario Where Nickname =:nickname AND Contrasena =:contrasena",Usuario.class)
+        List<Usuario> query = session.createNativeQuery("select * from usuario where Nickname =:nickname AND Contrasena =:contrasena",Usuario.class)
                 .setParameter("nickname",usuario.getNickname())
-                ..setParameter("contrasena",usuario.getContrasena()).getResultList();
+                .setParameter("contrasena",usuario.getContrasena()).getResultList();
         return !query.isEmpty();
     }
 

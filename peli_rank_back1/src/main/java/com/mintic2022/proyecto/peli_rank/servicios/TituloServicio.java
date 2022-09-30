@@ -100,5 +100,11 @@ public class TituloServicio {
         return objTitulo;
 
     }
+    public List<Titulo> getListTitulo(String nombre) throws Exception{
+        Session session = createSession();
+        List<Titulo> objTitulo = session.createNativeQuery("select * from titulo where Titulo = :n ",Titulo.class).setParameter("n", nombre).list();
+        session.close();
+        return objTitulo;
+    }
 
 }
