@@ -7,7 +7,6 @@ function get_data_form(evt){
     const usuario ={
         nickname : form.login_usuario.value,
         contrasena : form.login_contrasena.value
-
     }
     create(usuario)
 
