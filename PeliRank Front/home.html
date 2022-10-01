@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/estilos_home.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon_pelirank.png"
+      type="image/x-icon"
+    />
+    <title>Home • Pelirank</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-box-img">
+        <a href="login.html"
+          ><img
+            src="images/logo-pelirank-blanco-05.png"
+            alt="Logo-Pelirank"
+            class="header-box-imagen"
+        /></a>
+      </div>
+      <div class="header_search"> 
+        <form class="header_search_container">
+          <input type="text" id="entrarT"  placeholder="        Buscar peliculas, series y mas">
+          <button class="search_lupa" type='button' onclick="entrarTitulo()">&#128270</button>
+        </form>
+      </div>
+      <div class="header_user">
+        <div class="user_container">
+          <div class="user_name" id="nick">Usuario</div>
+          <div class="user_icon">
+            <img src="images/icon_user.png" alt="icon user">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+        <article class="aside">
+          <a href="home.html" class="a"></a><div class="inicio">Inicio</div></a>
+          <div class="cuenta">Cuenta</div>
+          <a href="login.html" class="a"><div class="salir">Salir</div></a>
+        </article>
+        <article class="central">
+          <div class="container_central" id="imatitulos"></div>
+        </article>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-box">
+        <div class="footer-box-img">
+          <a href="https://www.facebook.com" target="_blank"
+            ><img
+              src="images/logo_facebook-07.png"
+              alt="Logo-Facebook"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+        <div class="footer-box-img">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="images/logo_instagram-08.png"
+              alt="Logo-Instagram"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+        <div class="footer-box-img">
+          <a href="https://www.twitter.com" target="_blank"
+            ><img
+              src="images/logo_twitter-09.png"
+              alt="Logo_Twitter"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/home.js"></script>
+  </body>
+</html>

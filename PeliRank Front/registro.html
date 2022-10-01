@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/estilos_registro.css" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon_pelirank.png"
+      type="image/x-icon"
+    />
+    <title>Registro • Pelirank</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-box-img">
+        <a href="index.html"
+          ><img
+            src="images/logo-pelirank-blanco-05.png"
+            alt="Logo-Pelirank"
+            class="header-box-imagen"
+        /></a>
+      </div>
+    </header>
+
+    <section class="section">
+      <form onsubmit="get_data_form(event)" id="form">
+        <div class="login_icon">
+          <h2>Formulario de registro</h2>
+        </div>
+        <div class="contenedor_registro">
+          <div class="login_container">
+            <label for="login_nombre">Nombre</label>
+            <input id="login_nombre" type="text" name="login_nombre" />
+            <label for="login_email">Email</label>
+            <input id="login_email" type="email" name="login_email" />
+            <label for="login_nick">Nickname</label>
+            <input id="login_nick" type="text" name="login_nick" />
+          </div>
+          <div class="login_container">
+            <label for="login_apellido">Apellido</label>
+            <input id="login_apellido" type="text" name="login_apellido" />
+            <label for="login_pais">País</label>
+            <input id="login_pais" type="text" name="login_pais" />
+            <label for="login_contrasena">Contraseña</label>
+            <input
+              id="login_contrasena"
+              type="password"
+              name="login_contrasena"
+            />
+          </div>
+        </div>
+        <div class="login_footer">
+          <input type="submit" value="Registrar" />
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-box">
+        <div class="footer-box-img">
+          <a href="https://www.facebook.com" target="_blank"
+            ><img
+              src="images/logo_facebook-07.png"
+              alt="Logo-Facebook"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+        <div class="footer-box-img">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              src="images/logo_instagram-08.png"
+              alt="Logo-Instagram"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+        <div class="footer-box-img">
+          <a href="https://www.twitter.com" target="_blank"
+            ><img
+              src="images/logo_twitter-09.png"
+              alt="Logo_Twitter"
+              class="footer-box-imagen"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/usuario.js"></script>
+  </body>
+</html>
